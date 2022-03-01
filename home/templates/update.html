@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block title %}Edit{% endblock title %}
+{% block body %}
+
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <legend>Edit section</legend></br></br>
+        <div class="container">
+            {% for message in messages%}
+            <h1>{{message}}</h1>
+            {% endfor %}
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Policy_id</span>
+            <input type="text" value="{{new.Policy_id}}" name="Policy_id" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Customer_id</span>
+            <input type="text" value="{{new.Customer_id}}" name="Customer_id" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <fieldset disabled>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Date_of_Purchase</span>
+                <input type="text" value="{{new.Date_of_Purchase}}" id="disabledTextInput" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </fieldset>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Fuel</span>
+            <input type="text" value="{{new.Fuel}}" name="Fuel" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">VEHICLE_SEGMENT</span>
+            <input type="text" value="{{new.VEHICLE_SEGMENT}}" name="VEHICLE_SEGMENT" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Premium</span>
+            <input type="text" value="{{new.Premium}}" name="Premium" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">bodily_injury_liability</span>
+            <input type="text" value="{{new.bodily_injury_liability}}" name="bodily_injury_liability"
+                class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">personal_injury_protection</span>
+            <input type="text" value="{{new.personal_injury_protection}}" name="personal_injury_protection"
+                class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">property_damage_liability</span>
+            <input type="text" value="{{new.property_damage_liability}}" name="property_damage_liability"
+                class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">collision</span>
+            <input type="text" value="{{new.collision}}" name="collision" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">comprehensive</span>
+            <input type="text" value="{{new.comprehensive}}" name="comprehensive" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Customer_Gender</span>
+            <input type="text" value="{{new.Customer_Gender}}" name="Customer_Gender" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Customer_Income_group</span>
+            <input type="text" value="{{new.Customer_Income_group}}" name="Customer_Income_group" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Customer_Region</span>
+            <input type="text" value="{{new.Customer_Region}}" name="Customer_Region" class="form-control"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text" id="inputGroup-sizing-default">Customer_Marital_status</label>
+        </div>
+
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="{{new.Customer_Marital_status}}"
+                name="Customer_Marital_status" id="flexCheckDefault" {% if new.Customer_Marital_status %}checked{% endif %}>
+            {% if new.Customer_Marital_status %}
+            <label class="form-check-label" for="flexCheckDefault">
+                Uncheck if not married
+            </label>
+            {% else %}
+            <label class="form-check-label" for="flexCheckDefault">
+                Check if married
+            </label>
+            {% endif %}
+        </div></br></br>
+
+        <input class="btn btn-primary" type="submit" value="Update"></br></br>
+
+    </form>
+</div>
+{% endblock body %}
